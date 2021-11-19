@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
       DeviceOrientation.portraitUp,
     ]);
 
-    _controller = VideoPlayerController.asset("video/k.mp4")
+    _controller = VideoPlayerController.asset("videos/k.mp4")
       ..initialize().then((_) {
         // Once the video has been loaded we play the video and set looping to true.
         _controller.play();
@@ -55,14 +55,9 @@ class _HomeState extends State<Home> {
         child: Scaffold(
           body: Stack(
             children: [
-              //  Add a SizedBox to contain our video.
-              SizedBox.expand(
-                child: FittedBox(
-                  fit: BoxFit.fill,
-                  child: SizedBox(
-                    
-                    child: VideoPlayer(_controller),
-                  ),
+              Container(
+                child: SizedBox(
+                  child: VideoPlayer(_controller,  ),
                 ),
               ),
               Name(),
